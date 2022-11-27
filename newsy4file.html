@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>第四次实验（数字电子时钟）</title>
+		<style type="text/css">
+			 z {
+				font-size:40vh;
+				font-weight: 600;
+				font-family: Kanit;
+				color: Pink;
+			}
+		</style>
+	</head>
+	<body bgcolor="palevioletred">
+		<z id="time"></p>
+	</body>
+	<script>
+		var getTime = function() {
+			var date = new Date();
+			var hour = date.getHours() < 10 ? '0' : date.getHours();
+			var min = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+			var sec = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+			var time = `${hour}:${min}:${sec}`;
+			document.getElementById("time").innerHTML = time
+		}
+		setInterval(() => {
+			getTime()
+		}, 1000)
+	</script>
+</html>
